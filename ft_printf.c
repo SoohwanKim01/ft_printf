@@ -6,7 +6,7 @@
 /*   By: sookim <sookim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:05:47 by sookim            #+#    #+#             */
-/*   Updated: 2020/07/20 21:05:48 by sookim           ###   ########.fr       */
+/*   Updated: 2020/07/20 22:25:06 by sookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_flags	start_flag(void)
 {
-	t_flags	flags;
+	t_flags		flags;
 
 	flags.left = 0;
 	flags.zeros = 0;
@@ -69,7 +69,7 @@ static t_flags	check_flags(char c, va_list param_list, t_flags flags)
 
 static int		check_conv(char c, va_list param_list, t_flags flags)
 {
-	int	size;
+	int			size;
 
 	if (c == 'c')
 		size = ft_printc(va_arg(param_list, int), flags);
@@ -92,11 +92,11 @@ static int		check_conv(char c, va_list param_list, t_flags flags)
 	return (size);
 }
 
-int ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
-    va_list	param_list;
-	int		size;
-	t_flags	flags;
+	va_list		param_list;
+	int			size;
+	t_flags		flags;
 
 	size = 0;
 	va_start(param_list, format);
